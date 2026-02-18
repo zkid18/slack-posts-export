@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slack Posts Exporter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Slack Posts Exporter</h1>
+
+    <div id="status-bar" class="status-bar hidden">
+      <span id="status-text"></span>
+    </div>
+
+    <div class="url-section">
+      <label for="slack-url">Slack workspace URL</label>
+      <div class="url-row">
+        <input type="text" id="slack-url" placeholder="https://app.slack.com/..." readonly>
+        <button id="detect-btn" class="btn btn-secondary">Detect</button>
+      </div>
+    </div>
+
+    <div class="progress-section hidden" id="progress-section">
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <span class="progress-text" id="progress-text">0 messages found</span>
+    </div>
+
+    <div class="actions">
+      <button id="export-btn" class="btn btn-primary" disabled>Export Posts</button>
+      <button id="download-btn" class="btn btn-success hidden">Download CSV</button>
+    </div>
+
+    <div id="error-msg" class="error hidden"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
